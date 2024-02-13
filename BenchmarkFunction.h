@@ -2,15 +2,12 @@
 // Created by Sippawit Thammawiset on 29/1/2024 AD.
 //
 
-/* TODO:    Add documentation
- */
-
 #ifndef BENCHMARK_FUNCTION_H
 #define BENCHMARK_FUNCTION_H
 
 namespace Benchmark
 {
-    typedef int FUNCTION_TYPE;
+    typedef int FUNCTION_NAME;
 
     enum
     {
@@ -174,124 +171,124 @@ namespace Benchmark
                     std::vector<double> &UpperBound,
                     int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -100);
+            UpperBound = std::vector<double>(NVariable, 100);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -100);
-            UpperBound = std::vector<double>(NVariable, 100);
         }
 
         void Schwefel_s_2_22(std::vector<double> &LowerBound,
                              std::vector<double> &UpperBound,
                              int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -10);
+            UpperBound = std::vector<double>(NVariable, 10);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -10);
-            UpperBound = std::vector<double>(NVariable, 10);
         }
 
         void Schwefel_s_1_20(std::vector<double> &LowerBound,
                              std::vector<double> &UpperBound,
                              int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -100);
+            UpperBound = std::vector<double>(NVariable, 100);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -100);
-            UpperBound = std::vector<double>(NVariable, 100);
         }
 
         void Rosenbrock(std::vector<double> &LowerBound,
                         std::vector<double> &UpperBound,
                         int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -30);
+            UpperBound = std::vector<double>(NVariable, 30);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -30);
-            UpperBound = std::vector<double>(NVariable, 30);
         }
 
         void Step(std::vector<double> &LowerBound,
                   std::vector<double> &UpperBound,
                   int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -100);
+            UpperBound = std::vector<double>(NVariable, 100);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -100);
-            UpperBound = std::vector<double>(NVariable, 100);
         }
 
         void QuarticNoise(std::vector<double> &LowerBound,
                           std::vector<double> &UpperBound,
                           int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -1.28f);
+            UpperBound = std::vector<double>(NVariable, 1.28f);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -1.28f);
-            UpperBound = std::vector<double>(NVariable, 1.28f);
         }
 
         void Schwefel_s_2_26(std::vector<double> &LowerBound,
                              std::vector<double> &UpperBound,
                              int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -500);
+            UpperBound = std::vector<double>(NVariable, 500);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -500);
-            UpperBound = std::vector<double>(NVariable, 500);
         }
 
         void Rastrigin(std::vector<double> &LowerBound,
                        std::vector<double> &UpperBound,
                        int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -5.12f);
+            UpperBound = std::vector<double>(NVariable, 5.12f);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -5.12f);
-            UpperBound = std::vector<double>(NVariable, 5.12f);
         }
 
         void Ackley(std::vector<double> &LowerBound,
                     std::vector<double> &UpperBound,
                     int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -32);
+            UpperBound = std::vector<double>(NVariable, 32);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -32);
-            UpperBound = std::vector<double>(NVariable, 32);
         }
 
         void Griewank(std::vector<double> &LowerBound,
                       std::vector<double> &UpperBound,
                       int &MaximumIteration, int &NPopulation, int &NVariable)
         {
+            LowerBound = std::vector<double>(NVariable, -600);
+            UpperBound = std::vector<double>(NVariable, 600);
+
             MaximumIteration = 1000;
             NPopulation = 50;
             NVariable = 30;
-
-            LowerBound = std::vector<double>(NVariable, -600);
-            UpperBound = std::vector<double>(NVariable, 600);
         }
     } // Benchmark::Condition
 
-    double BenchmarkFunction (FUNCTION_TYPE FUNCTION, const std::vector<double> &Position)
+    double BenchmarkFunction (FUNCTION_NAME FUNCTION, const std::vector<double> &Position)
     {
         switch (FUNCTION)
         {
@@ -323,7 +320,7 @@ namespace Benchmark
         return -1;
     }
 
-    void BenchmarkCondition(FUNCTION_TYPE FUNCTION,
+    void BenchmarkCondition(FUNCTION_NAME FUNCTION,
                             std::vector<double> &LowerBound, std::vector<double> &UpperBound,
                             int &MaximumIteration, int &NPopulation, int &NVariable)
     {
