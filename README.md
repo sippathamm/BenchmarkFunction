@@ -54,7 +54,7 @@ These benchmark functions serve as standard test cases to evaluate the performan
    - **Global Minimum**: $f(x^{\*}) = 0, \text{at}\space x^{\*} = (0.5, ..., 0.5)$
 
 6. **Quartic Noise**:
-   ![](https://github.com/sippathamm/BenchmarkFunction/blob/master/image/quartic_noise.png "Quartic noise")
+   ![](https://github.com/sippathamm/BenchmarkFunction/blob/master/image/quartic_noise.png "Quartic Noise")
    - **Dimension**: $30$
    - **Lower Bound**: $-1.28$ for all dimensions
    - **Upper Bound**: $+1.28$ for all dimensions
